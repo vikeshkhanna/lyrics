@@ -15,7 +15,7 @@ def getLyricsHtml (songName, artistName):
   return res
 
 def getFullLyricsUrl (xml):
-  soup = BeautifulSoup (xml)
+  soup = BeautifulSoup (xml, "html.parser")
   url = soup.find ("url")
 
   if url:
@@ -25,7 +25,7 @@ def getFullLyricsUrl (xml):
 
 def getFullLyricsFromUrl (url):
   html = urllib2.urlopen (url).read()
-  soup = BeautifulSoup (html)
+  soup = BeautifulSoup (html, "html.parser")
 
   box = soup.find("div", {"class" : "lyricbox"})
   children = [child for child in box.children]

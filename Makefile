@@ -6,5 +6,5 @@ install:
 	@[ -d $(LYRICS_DIR) ] || mkdir $(LYRICS_DIR)
 	@cp *.* $(LYRICS_DIR)
 	@echo "#!/bin/bash" > $(LYRICS_FILE)
-	@echo "cd $(LYRICS_DIR) && run.sh" >> $(LYRICS_FILE)
+	@echo "cd $(LYRICS_DIR) && ./run.sh" >> $(LYRICS_FILE)
 	@chmod u+x $(LYRICS_FILE)
